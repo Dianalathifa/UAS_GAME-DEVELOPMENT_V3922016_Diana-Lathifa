@@ -1,0 +1,95 @@
+[gd_scene load_steps=13 format=3 uid="uid://c0qcple2tp2h8"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_t466j"]
+[ext_resource type="Texture2D" uid="uid://dnvujuiieirls" path="res://assets/maps/craftpix-net-434566-free-robot-pixel-art-sprite-sheets/Destroyer/Walk.png" id="2_mase3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5x14l"]
+atlas = ExtResource("2_mase3")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aw80v"]
+atlas = ExtResource("2_mase3")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3bt3"]
+atlas = ExtResource("2_mase3")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ons8k"]
+atlas = ExtResource("2_mase3")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7be2t"]
+atlas = ExtResource("2_mase3")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8uws"]
+atlas = ExtResource("2_mase3")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfxrj"]
+atlas = ExtResource("2_mase3")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtfqb"]
+atlas = ExtResource("2_mase3")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6hdqq"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5x14l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aw80v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3bt3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ons8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7be2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8uws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfxrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtfqb")
+}],
+"loop": true,
+"name": &"robot",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w3pbj"]
+size = Vector2(20, 46)
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(-230, -331)
+collision_layer = 2
+script = ExtResource("1_t466j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(231, 315.5)
+scale = Vector2(0.671875, 0.570313)
+sprite_frames = SubResource("SpriteFrames_6hdqq")
+animation = &"robot"
+autoplay = "robot"
+frame_progress = 0.170494
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(231, 331)
+shape = SubResource("RectangleShape2D_w3pbj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(231, 327)
+zoom = Vector2(2, 2)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true

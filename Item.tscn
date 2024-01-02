@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://4frs2f6a06qu"]
+
+[ext_resource type="Script" path="res://gem.gd" id="1_7mrvr"]
+[ext_resource type="Texture2D" uid="uid://rwnewwkgqglm" path="res://assets/maps/Gem/gem.png" id="2_21x15"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfhy0"]
+atlas = ExtResource("2_21x15")
+region = Rect2(0, 0, 15, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cb2yd"]
+atlas = ExtResource("2_21x15")
+region = Rect2(15, 0, 15, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1vy5"]
+atlas = ExtResource("2_21x15")
+region = Rect2(30, 0, 15, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqiff"]
+atlas = ExtResource("2_21x15")
+region = Rect2(45, 0, 15, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30uh7"]
+atlas = ExtResource("2_21x15")
+region = Rect2(60, 0, 15, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5xqw0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfhy0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cb2yd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1vy5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqiff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30uh7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsdn3"]
+size = Vector2(5.96274, 5.04242)
+
+[node name="GEM" type="Area2D"]
+light_mask = 0
+visibility_layer = 2
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_7mrvr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+light_mask = 0
+visibility_layer = 2
+position = Vector2(493.25, 318.25)
+scale = Vector2(3.03333, 3.65385)
+sprite_frames = SubResource("SpriteFrames_5xqw0")
+frame_progress = 0.623662
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 0
+visibility_layer = 2
+position = Vector2(493, 314)
+scale = Vector2(5.36666, 6.34615)
+shape = SubResource("RectangleShape2D_jsdn3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

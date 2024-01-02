@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://biae5bneci1ij"]
+
+[ext_resource type="Texture2D" uid="uid://b6whjhc2lladd" path="res://assets/parallax-industrial-pack/layers/skill-desc_0003_bg.png" id="1_twk5v"]
+[ext_resource type="Texture2D" uid="uid://h0jkalhsaukv" path="res://assets/parallax-industrial-pack/layers/skill-desc_0002_far-buildings.png" id="2_18no4"]
+[ext_resource type="Texture2D" uid="uid://cs6bbirmk3igr" path="res://assets/parallax-industrial-pack/layers/skill-desc_0001_buildings.png" id="3_a06t2"]
+[ext_resource type="Texture2D" uid="uid://p5xf27u1n0yp" path="res://assets/parallax-industrial-pack/layers/skill-desc_0000_foreground.png" id="4_6rjkw"]
+
+[node name="Node2D" type="ParallaxBackground"]
+
+[node name="bg" type="ParallaxLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="bg"]
+position = Vector2(1392.5, 238.5)
+scale = Vector2(26.2978, 2.91875)
+texture = ExtResource("1_twk5v")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(1300, 243.5)
+scale = Vector2(32.0845, 3.19014)
+texture = ExtResource("2_18no4")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+position = Vector2(276, 300)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(1122, -57)
+scale = Vector2(26.375, 3.13333)
+texture = ExtResource("3_a06t2")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(1345, 239)
+scale = Vector2(26.3897, 4.40385)
+texture = ExtResource("4_6rjkw")
